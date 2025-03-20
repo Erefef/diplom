@@ -47,7 +47,7 @@ class PregnancyCalculatorScreenState extends State<PregnancyCalculatorScreen> {
     return Column(
       children: [
         RadioListTile<CalculationMethod>(
-          title: const Text('По дате последней менструации'),
+          title: const Text('По дате зачатия/овуляции'),
           value: CalculationMethod.lastPeriod,
           groupValue: _method,
           onChanged: (value) => setState(() {
@@ -56,7 +56,7 @@ class PregnancyCalculatorScreenState extends State<PregnancyCalculatorScreen> {
           }),
         ),
         RadioListTile<CalculationMethod>(
-          title: const Text('По дате зачатия/овуляции'),
+          title: const Text('По дате последней менструации'),
           value: CalculationMethod.conception,
           groupValue: _method,
           onChanged: (value) => setState(() {
@@ -91,28 +91,33 @@ class PregnancyCalculatorScreenState extends State<PregnancyCalculatorScreen> {
 
   // Карточка с результатом
   Widget _buildResultCard(String title, String value) {
-    return Card(
-      margin: const EdgeInsets.only(bottom: 15),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title,
+    return SizedBox( // <-- Добавляем SizedBox
+      width: double.infinity, // Растягиваем на всю ширину
+      child: Card(
+        margin: const EdgeInsets.only(bottom: 15),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.grey[600],
-                )
-            ),
-            const SizedBox(height: 8),
-            Text(value,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                value,
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
-                )
-            ),
-          ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
