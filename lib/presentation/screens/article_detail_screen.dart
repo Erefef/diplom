@@ -11,7 +11,7 @@ class ArticleDetailScreen extends StatefulWidget {
 
   @override
   State<ArticleDetailScreen> createState() => _ArticleDetailScreenState();
-}/////
+}
 
 
 class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
