@@ -1,0 +1,103 @@
+name: pregnancy_calendar
+description: "Календарь беременности"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  table_calendar: ^3.0.8
+  shared_preferences: ^2.2.0
+  #syncfusion_flutter_charts: ^20.4.48
+  fl_chart: ^0.70.2
+  intl: ^0.20.2
+  url_launcher: ^6.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/articles/images/1.jpg
+    - assets/articles/images/2.jpg
+    - assets/articles/images/3.jpg
+    - assets/articles/images/4.jpg
+    - assets/articles/images/5.jpg
+    - assets/articles/images/6.jpg
+    - assets/articles/images/7.jpg
+    - assets/articles/images/8.jpg
+    - assets/articles/images/9.jpg
+    - assets/articles/images/10.jpg
+    - assets/articles/images/11.jpg
+    - assets/articles/images/12.jpg
+    - assets/articles/images/13.jpg
+    - assets/articles/images/14.jpg
+    - assets/articles/images/15.jpg
+    - assets/articles/images/16.jpg
+    - assets/articles/images/17.jpg
+    - assets/articles/images/18.jpg
+    - assets/articles/images/19.jpg
+    - assets/articles/images/20.jpg
+    - assets/articles/images/21.jpg
+    - assets/articles/images/22.jpg
+    - assets/articles/images/23.jpg
+    - assets/articles/images/24.jpg
+    - assets/articles/images/25.jpg
+    - assets/articles/images/26.jpg
+    - assets/articles/images/27.jpg
+    - assets/articles/images/28.jpg
+    - assets/articles/images/29.jpg
+    - assets/articles/images/30.jpg
+    - assets/articles/images/31.jpg
+    - assets/articles/images/32.jpg
+    - assets/articles/images/contraction_help.jpg
+    - assets/articles/content/1.txt
+    - assets/articles/content/2.txt
+    - assets/articles/content/3.txt
+    - assets/articles/content/4.txt
+    - assets/articles/content/5.txt
+    - assets/articles/content/6.txt
+    - assets/articles/content/7.txt
+    - assets/articles/content/8.txt
+    - assets/articles/content/9.txt
+    - assets/articles/content/10.txt
+    - assets/articles/content/11.txt
+    - assets/articles/content/12.txt
+    - assets/articles/content/13.txt
+    - assets/articles/content/14.txt
+    - assets/articles/content/15.txt
+    - assets/articles/content/16.txt
+    - assets/articles/content/17.txt
+    - assets/articles/content/18.txt
+    - assets/articles/content/19.txt
+    - assets/articles/content/20.txt
+    - assets/articles/content/21.txt
+    - assets/articles/content/22.txt
+    - assets/articles/content/23.txt
+    - assets/articles/content/24.txt
+    - assets/articles/content/25.txt
+    - assets/articles/content/26.txt
+    - assets/articles/content/27.txt
+    - assets/articles/content/28.txt
+    - assets/articles/content/29.txt
+    - assets/articles/content/30.txt
+    - assets/articles/content/31.txt
+    - assets/articles/content/32.txt
+    - assets/fruits/raspberry.png
+    - assets/fruits/strawberry.png
+    - assets/fruits/lemon.png
+    - assets/fruits/avocado.png
+    - assets/fruits/banana.png
+    - assets/fruits/corn.png
+    - assets/fruits/eggplant.png
+    - assets/fruits/pumpkin.png
+    - assets/fruits/watermelon.png
+    - assets/fruits/big_pumpkin.png
