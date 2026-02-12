@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/calendar_widget.dart';
 import '../widgets/comment_dialog.dart';
+import '../widgets/pregnancy_info_card.dart';
 import '../../data/local_data_source.dart';
 import '../../utils/constants.dart';
 
@@ -16,11 +17,16 @@ class PregnancyCalendarScreenState extends State<PregnancyCalendarScreen> {
   DateTime? _conceptionDate;
   DateTime _selectedDay = DateTime.now();
 
+  // Ключ для доступа к состоянию PregnancyInfoCard
+  final GlobalKey<PregnancyInfoCardState> _infoCardKey = GlobalKey();
+
   @override
   void initState() {
     super.initState();
     _loadConceptionDate();
-  }
+  } //здесь я возвращаю значение оператора состояния из списка и
+    //присваеваю эту переменную переменной календаря
+    //для изменения данных внутри
 
   Future<void> _loadConceptionDate() async {
     final date = await _dataSource.getConceptionDate();
@@ -38,6 +44,7 @@ class PregnancyCalendarScreenState extends State<PregnancyCalendarScreen> {
     if (selectedDate != null) {
       await _dataSource.saveConceptionDate(selectedDate);
       setState(() => _conceptionDate = selectedDate);
+      _infoCardKey.currentState?.refresh();
     }
   }
 
@@ -76,11 +83,20 @@ class PregnancyCalendarScreenState extends State<PregnancyCalendarScreen> {
           child: const Text(AppConstants.selectDateButton),
         ),
       )
-          : CalendarWidget(
-        conceptionDate: _conceptionDate!,
-        selectedDay: _selectedDay,
-        onDaySelected: _handleDaySelected,
-        dataSource: _dataSource,
+          : Column(
+        children: [
+          // Новая карточка с информацией о беременности
+          PregnancyInfoCard(key: _infoCardKey),
+          // Существующий календарь
+          Expanded(
+            child: CalendarWidget(
+              conceptionDate: _conceptionDate!,
+              selectedDay: _selectedDay,
+              onDaySelected: _handleDaySelected,
+              dataSource: _dataSource,
+            ),
+          ),
+        ],
       ),
     );
   }
